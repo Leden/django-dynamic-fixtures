@@ -76,7 +76,7 @@ class Loader(object):
             raise
 
         try:
-            directory = os.path.dirname(module.__file__)
+            directory = module.__file__ and os.path.dirname(module.__file__)
         except AttributeError:
             # No __file__ available for module
             return
